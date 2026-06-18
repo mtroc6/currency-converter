@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Currency Converter
+
+> A fast, real-time currency converter built with AI-assisted "vibe coding".
+
+Convert between world currencies using live European Central Bank exchange rates. Pick a source and target currency, enter an amount, and get an instant result with the current rate and the date it was last updated.
+
+**Live app:** _(production URL — added after Vercel deploy)_
+
+This project was built for the IPVC-ESTG course *Engenharia de Software* (2025/26) as a hands-on exercise in AI-assisted development, Agile/Scrum management, and a complete CI/CD pipeline.
+
+## Features
+
+- Pick source and target currencies from the full ECB list
+- Enter an amount and see the converted result in real time
+- Live exchange rates from the Frankfurter API (European Central Bank data)
+- Swap source and target currencies with one click
+- Shows the current rate and the date it was last updated
+- Clear loading and error states
+
+## Tech Stack
+
+- **Next.js 16** (App Router) + **TypeScript**
+- **Tailwind CSS** for styling
+- **Frankfurter API** (`api.frankfurter.dev/v1`) for exchange rates — no API key, CORS open
+- **Vitest** for unit testing pure conversion logic
+- **ESLint** (flat config) for linting
+- **GitHub Actions** for CI (lint + test + build)
+- **Vercel** for CD (automatic deploys)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install      # Install dependencies
+npm run dev      # Start the dev server (http://localhost:3000)
+npm run lint     # Run ESLint
+npx vitest run   # Run unit tests
+npm run build    # Production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+.
+├── app/                # Next.js App Router (pages, layout)
+├── components/         # UI components (converter, currency picker)
+├── lib/                # Pure logic: convert, roundTo, formatCurrency, API client
+├── __tests__/          # Vitest unit tests
+├── .github/workflows/  # GitHub Actions CI pipeline
+└── docs/               # Project report and documentation
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## CI/CD
 
-## Learn More
+Continuous integration runs on **GitHub Actions**: every push and pull request triggers a workflow that lints, runs the unit tests, and builds the app, so broken code never reaches `main`. Continuous deployment is handled by **Vercel**: merges to `main` deploy automatically to production, and every pull request gets its own preview URL for review before merging.
 
-To learn more about Next.js, take a look at the following resources:
+## Agile
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Managed with **GitHub Projects** (Scrum: Product Backlog, Sprint Backlog, issues) — board: https://github.com/mtroc6/currency-converter/projects.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Authors
 
-## Deploy on Vercel
+- **Mateusz** — [@mtroc6](https://github.com/mtroc6)
+- **Hubert Stocki** — [@Rastji](https://github.com/Rastji)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Documentation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The full project report (theme, architecture, AI prompting, evidence, and critical analysis) is available in [`docs/REPORT.md`](docs/REPORT.md).
