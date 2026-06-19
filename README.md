@@ -4,7 +4,7 @@
 
 Convert between world currencies using live European Central Bank exchange rates. Pick a source and target currency, enter an amount, and get an instant result with the current rate and the date it was last updated.
 
-**Live app:** _(production URL — added after Vercel deploy)_
+**Live app:** https://currency-converter-usluginajuz.vercel.app
 
 This project was built for the IPVC-ESTG course *Engenharia de Software* (2025/26) as a hands-on exercise in AI-assisted development, Agile/Scrum management, and a complete CI/CD pipeline.
 
@@ -55,7 +55,7 @@ Continuous integration runs on **GitHub Actions**: every push and pull request t
 
 ## Agile
 
-Managed with **GitHub Projects** (Scrum: Product Backlog, Sprint Backlog, issues) — board: https://github.com/mtroc6/currency-converter/projects.
+Managed with **GitHub Projects** (Scrum: Product Backlog, Sprint Backlog, issues) — board: https://github.com/users/mtroc6/projects/2.
 
 ## Authors
 
