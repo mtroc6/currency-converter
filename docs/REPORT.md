@@ -165,7 +165,7 @@ The project lives in a single GitHub repository (https://github.com/mtroc6/curre
 
 ### 4.2. Agile Management (Scrum on GitHub Projects)
 
-We managed the work as a lightweight **Scrum** process on a **GitHub Projects** board with the columns *Backlog → Sprint Backlog → In Progress → In Review → Done*. Each user story and bug is a GitHub Issue, linked to the board and to the branch/PR that implements it. We ran **one complete sprint** covering the core converter functionality. Bugs found during the sprint were filed as issues (BUG-01, BUG-02), assigned, fixed on dedicated branches, and closed via their PRs — demonstrating issue/bug management as part of the flow (see Figure 1).
+We managed the work as a lightweight **Scrum** process on a **GitHub Projects** board with the columns *Product Backlog → In Progress → Done*. Each user story and bug is a GitHub Issue, linked to the board and to the branch/PR that implements it. We ran **one complete sprint** covering the core converter functionality. Bugs found during the sprint were filed as issues (BUG-01, BUG-02), assigned, fixed on dedicated branches, and closed via their PRs — demonstrating issue/bug management as part of the flow (see Figure 1).
 
 ### 4.3. Task Distribution
 
@@ -207,7 +207,7 @@ If any step fails, the run is red and the PR is blocked from merging (see Figure
 Vercel is connected directly to the GitHub repository, providing zero-configuration **Continuous Deployment** for the Next.js app:
 
 - **Preview deployments:** every Pull Request automatically builds and is published to a unique preview URL, so a reviewer can click through the actual running change before approving (see Figures 4 and 5).
-- **Production deployments:** every merge to `main` triggers an automatic production deploy to the public URL (_(production URL — added after Vercel deploy)_).
+- **Production deployments:** every merge to `main` triggers an automatic production deploy to the public URL (https://currency-converter-usluginajuz.vercel.app).
 
 Because Vercel waits on the build and the CI checks are required on the PR, a change must be both *green in CI* and *successfully built by Vercel* before it can reach users.
 
@@ -268,4 +268,4 @@ Vitest. (n.d.). *Vitest — Next generation testing framework*. Retrieved June 1
 ## 8. Links
 
 - **Repository (GitHub):** https://github.com/mtroc6/currency-converter
-- **Application (production, Vercel):** _(production URL — added after Vercel deploy)_
+- **Application (production, Vercel):** https://currency-converter-usluginajuz.vercel.app
